@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6948435337268813765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171e97b59a7349b5be8570e262f6e42, type: 3}
+  m_Name: Talk And Chose
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -520, y: -232}
+  ports:
+    keys:
+    - enter
+    - exit
+    - exit 0
+    - exit 1
+    values:
+    - _fieldName: enter
+      _node: {fileID: -6948435337268813765}
+      _typeQualifiedName: XNode.Examples.JuqingGraph.JuqingData, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -6948435337268813765}
+      _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Examples.JuqingGraph.JuqingData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit 0
+      _node: {fileID: -6948435337268813765}
+      _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Examples.JuqingGraph.JuqingData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: enter
+        node: {fileID: 7198289119112665519}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+    - _fieldName: exit 1
+      _node: {fileID: -6948435337268813765}
+      _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Examples.JuqingGraph.JuqingData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections:
+      - fieldName: enter
+        node: {fileID: -1428680601639652493}
+        reroutePoints: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 1
+  question: "\u4F60\u5403\u8FC7\u4E86\u5417\uFF1F"
+  enter:
+    talkString: 
+  exit:
+  - talkString: "\u5403\u8FC7\u4E86"
+  - talkString: "\u6CA1\u5403\u8FC7"
+--- !u!114 &-1428680601639652493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171e97b59a7349b5be8570e262f6e42, type: 3}
+  m_Name: Talk And Chose
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -120, y: -56}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: -1428680601639652493}
+      _typeQualifiedName: XNode.Examples.JuqingGraph.JuqingData, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit 1
+        node: {fileID: -6948435337268813765}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: -1428680601639652493}
+      _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Examples.JuqingGraph.JuqingData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  question: "\u6211\u4E0D\u5E0C\u671B\u4F60\u8FD9\u4E48\u56DE\u7B54\uFF01"
+  enter:
+    talkString: 
+  exit: []
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95c016e76e0d34bbfad8866e66c0272d, type: 3}
+  m_Name: DemoTalk
+  m_EditorClassIdentifier: 
+  nodes:
+  - {fileID: -6948435337268813765}
+  - {fileID: 7198289119112665519}
+  - {fileID: 4427184776578312698}
+  - {fileID: -1428680601639652493}
+  start: {fileID: -6948435337268813765}
+  current: {fileID: 7198289119112665519}
+--- !u!114 &4427184776578312698
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a20f394bdc9e41ea8e5fcd53faf14ba, type: 3}
+  m_Name: Test Juqing Flow
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -312, y: -424}
+  ports:
+    keys: []
+    values: []
+--- !u!114 &7198289119112665519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6171e97b59a7349b5be8570e262f6e42, type: 3}
+  m_Name: Talk And Chose
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: -136, y: -296}
+  ports:
+    keys:
+    - enter
+    - exit
+    values:
+    - _fieldName: enter
+      _node: {fileID: 7198289119112665519}
+      _typeQualifiedName: XNode.Examples.JuqingGraph.JuqingData, Assembly-CSharp,
+        Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: exit 0
+        node: {fileID: -6948435337268813765}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: exit
+      _node: {fileID: 7198289119112665519}
+      _typeQualifiedName: System.Collections.Generic.List`1[[XNode.Examples.JuqingGraph.JuqingData,
+        Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]],
+        mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
+      connections: []
+      _direction: 1
+      _connectionType: 0
+      _typeConstraint: 0
+      _dynamic: 0
+  question: "\u554A \u5C2C\u804A\uFF01"
+  enter:
+    talkString: 
+  exit: []
